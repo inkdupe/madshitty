@@ -1,15 +1,37 @@
+game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer("SetTeam", "Police")
+
 local LocalPlayer = game:GetService("Players").LocalPlayer
+local UIS = game:GetService("UserInputService")
+
 local Character = LocalPlayer.Character
 
+local startRank = LocalPlayer.leaderstats.Rank.Value
+
 local Message = Instance.new("Message", workspace)
-Message.Text = "you need handcuffs equipped (police team)\nthe script disables the main gui for less lag\nreset or rejoin to stop the script"
 
 Character.AncestryChanged:Connect(function() Character = nil end)
 
-LocalPlayer.PlayerGui.MainGUI.Enabled = false
+LocalPlayer.PlayerGui.MainGUI:Destroy()
+
+UIS.MouseBehavior = Enum.MouseBehavior.Default
 
 while task.wait() and Character do
-  for _ = 1, 10 do
-    game:GetService("ReplicatedStorage").Event:FireServer("Eject", LocalPlayer)
-  end
+    local status = "active"
+    UIS.MouseIconEnabled = true
+	if LocalPlayer.Backpack:FindFirstChild("Handcuffs") then
+        LocalPlayer.Backpack.Handcuffs.Parent = Character
+        UIS.MouseBehavior = Enum.MouseBehavior.Default
+    end
+
+    if not Character:FindFirstChild("Handcuffs") then
+        status = "inactive (no handcuffs found)"
+    end
+
+    Message.Text = "mad shitty xp farm\n\nthe script deletes the main gui for less lag\n\nrejoin to stop the script\n\ncurrent status:\n" .. status .. "\n\nstarted at rank [" .. startRank .. "]\ncurrent rank [" .. LocalPlayer.leaderstats.Rank.Value .. "]"
+
+    task.spawn(function()
+        for _ = 1, getgenv().XPspeed or 2000 do
+            game:GetService("ReplicatedStorage").Event:FireServer("Eject", LocalPlayer)
+        end
+    end)
 end
