@@ -3930,6 +3930,12 @@ function Luna:CreateWindow(WindowSettings)
 							end
 						end)	
 					end
+					local text = Dropdown.Selected.Text:lower()
+					for _, Item in ipairs(Dropdown.List:GetChildren()) do
+						if Item:IsA("TextLabel") and Item.Name ~= "Template" then
+							Item.Visible = text == "" or string.find(Item.Name:lower(), text, 1, true) ~= nil
+						end
+					end
 				end
 
 				local function PlayerTableRefresh()
@@ -5687,7 +5693,6 @@ function Luna:CreateWindow(WindowSettings)
 							if not DropdownSettings.MultipleOptions then
 								Dropdown.Selected.PlaceholderText = DropdownSettings.CurrentOption[1] or "None"
 							end
-							Dropdown.Selected.Text = ""
 						end)
 					end)
 					Option.Visible = true
@@ -5708,6 +5713,12 @@ function Luna:CreateWindow(WindowSettings)
 							tween(Option, {TextColor3 = Color3.fromRGB(200,200,200)})
 						end
 					end)	
+				end
+				local text = Dropdown.Selected.Text:lower()
+				for _, Item in ipairs(Dropdown.List:GetChildren()) do
+					if Item:IsA("TextLabel") and Item.Name ~= "Template" then
+						Item.Visible = text == "" or string.find(Item.Name:lower(), text, 1, true) ~= nil
+					end
 				end
 			end
 
