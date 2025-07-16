@@ -3857,7 +3857,6 @@ function Luna:CreateWindow(WindowSettings)
 						end
 					end
 
-					Toggle()
 					tween(Dropdown.List[name], {BackgroundTransparency = 0.95, TextColor3 = Color3.fromRGB(240,240,240)})
 				end
 
@@ -5640,7 +5639,6 @@ function Luna:CreateWindow(WindowSettings)
 					end
 				end
 
-				Toggle()
 				tween(Dropdown.List[name], {BackgroundTransparency = 0.95, TextColor3 = Color3.fromRGB(240,240,240)})
 			end
 
