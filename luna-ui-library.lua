@@ -4068,7 +4068,9 @@ function Luna:CreateWindow(WindowSettings)
 							tween(Option, {TextColor3 = Color3.fromRGB(200,200,200), BackgroundTransparency = 0.98})
 						end
 					end
-					tween(Dropdown.List[bleh], {TextColor3 = Color3.fromRGB(240,240,240), BackgroundTransparency = 0.95})
+					if Dropdown.List:FindFirstChild(bleh) then
+						tween(Dropdown.List[bleh], {TextColor3 = Color3.fromRGB(240,240,240), BackgroundTransparency = 0.95})
+					end
 
 					if DropdownSettings.MultipleOptions then
 						if DropdownSettings.CurrentOption and type(DropdownSettings.CurrentOption) == "table" then
@@ -5850,7 +5852,9 @@ function Luna:CreateWindow(WindowSettings)
 						tween(Option, {TextColor3 = Color3.fromRGB(200,200,200), BackgroundTransparency = 0.98})
 					end
 				end
-				tween(Dropdown.List[bleh], {TextColor3 = Color3.fromRGB(240,240,240), BackgroundTransparency = 0.95})
+				if Dropdown.List:FindFirstChild(bleh) then
+					tween(Dropdown.List[bleh], {TextColor3 = Color3.fromRGB(240,240,240), BackgroundTransparency = 0.95})
+				end
 
 				if DropdownSettings.MultipleOptions then
 					if DropdownSettings.CurrentOption and type(DropdownSettings.CurrentOption) == "table" then
