@@ -3909,7 +3909,6 @@ function Luna:CreateWindow(WindowSettings)
 								if not DropdownSettings.MultipleOptions then
 									Dropdown.Selected.PlaceholderText = DropdownSettings.CurrentOption[1] or "None"
 								end
-								Dropdown.Selected.Text = ""
 							end)
 						end)
 						Option.Visible = true
