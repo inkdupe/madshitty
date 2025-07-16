@@ -4019,7 +4019,6 @@ function Luna:CreateWindow(WindowSettings)
 				else
 					Dropdown.Selected.PlaceholderText = DropdownSettings.CurrentOption[1] or "None"
 				end
-				Dropdown.Selected.Text = ""
 
 				function DropdownV:Set(NewDropdownSettings)
 					NewDropdownSettings = Kwargify(DropdownSettings, NewDropdownSettings or {})
@@ -4090,7 +4089,6 @@ function Luna:CreateWindow(WindowSettings)
 					else
 						Dropdown.Selected.PlaceholderText = DropdownSettings.CurrentOption[1] or "None"
 					end
-					Dropdown.Selected.Text = ""
 
 					-- Luna.Flags[DropdownSettings.Flag] = DropdownSettings
 
@@ -5803,7 +5801,6 @@ function Luna:CreateWindow(WindowSettings)
 			else
 				Dropdown.Selected.PlaceholderText = DropdownSettings.CurrentOption[1] or "None"
 			end
-			Dropdown.Selected.Text = ""
 
 			function DropdownV:Set(NewDropdownSettings)
 				NewDropdownSettings = Kwargify(DropdownSettings, NewDropdownSettings or {})
@@ -5874,7 +5871,6 @@ function Luna:CreateWindow(WindowSettings)
 				else
 					Dropdown.Selected.PlaceholderText = DropdownSettings.CurrentOption[1] or "None"
 				end
-				Dropdown.Selected.Text = ""
 
 				-- Luna.Flags[DropdownSettings.Flag] = DropdownSettings
 
