@@ -3840,6 +3840,7 @@ function Luna:CreateWindow(WindowSettings)
 					end
 				end)
 
+				Dropdown.Selected.Text = ""
 
 				local function Clear()
 					for _, option in ipairs(Dropdown.List:GetChildren()) do
@@ -5622,6 +5623,7 @@ function Luna:CreateWindow(WindowSettings)
 				end
 			end)
 
+			Dropdown.Selected.Text = ""
 
 			local function Clear()
 				for _, option in ipairs(Dropdown.List:GetChildren()) do
