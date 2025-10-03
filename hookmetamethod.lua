@@ -3,7 +3,7 @@ return function(Signal)
     OldNamecall = hookmetamethod(game, "__namecall", newcclosure(function(Self, ...)
         local Method = getnamecallmethod()
 
-        if Method == "FireServer" then
+        if Method == "FireServer" or Method == "InvokeServer" then
             local Results = {Signal(Self, ...)}
             if #Results == 0 then
                 return
